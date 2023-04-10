@@ -1,3 +1,4 @@
+//get elements on HTML
 let plusBtn = document.querySelector(".plusCard")
 let cloneBtn = document.querySelector(".close")
 let title = document.querySelector(".title")
@@ -8,6 +9,7 @@ let addDatas = document.querySelector(".addData")
 let AllCards = document.querySelector(".NoOfCards")
 let parentDiv = document.querySelector(".parentDiv")
 
+//add cards event
 addDatas.addEventListener("click", (e) => {
     e.preventDefault()
     if(e.target.innerText == "Add Notes"){
@@ -22,7 +24,7 @@ addDatas.addEventListener("click", (e) => {
     }
 })
 
-
+// create cards and elements
 window.addEventListener("DOMContentLoaded",()=>{
 
     let dates = new Date()
@@ -58,9 +60,11 @@ window.addEventListener("DOMContentLoaded",()=>{
             footer.setAttribute("class","footer")
             cards.append(footer)
 
+            const month = ["January","February","March","April","May","June","July","August","September","October","November","December"];
+
             let createTime = document.createElement("p")
             createTime.setAttribute("class","date")
-            createTime.innerText = `${dates.getDate()}/${dates.getMonth()}/${dates.getFullYear()}`
+            createTime.innerText = `${month[dates.getMonth()]}/${dates.getDate()}/${dates.getFullYear()}`
             footer.append(createTime)
 
             let menuAction = document.createElement("p")
@@ -95,6 +99,7 @@ window.addEventListener("DOMContentLoaded",()=>{
     )
 })
 
+//new pop up window
 plusBtn.addEventListener("click",()=>{
     addDatas.innerText = "Add Notes"
     parentDiv.classList.add("visible")
@@ -103,6 +108,7 @@ cloneBtn.addEventListener("click",()=>{
     parentDiv.classList.remove("visible")
 })
 
+//delete function 
 function deletetion(deleteBtn){
     deleteBtn.addEventListener("click",(e)=>{
         fetch(`http://localhost:3000/posts/${e.target.parentElement.children[0].id}`, {
@@ -112,7 +118,7 @@ function deletetion(deleteBtn){
     })
 }
 
-
+//edit function using put method
 function edition(editElements){
     editElements.addEventListener("click",(e)=>{
         // console.log(e.target.parentElement.parentElement.children[2])
@@ -142,6 +148,7 @@ function edition(editElements){
     })
 }
 
+//show action buttons
 function showMenu(buttons,menus){
     buttons.addEventListener("click",()=>{
         let parents = document.querySelectorAll(".parentActions")
