@@ -22,8 +22,11 @@ body{
     align-items: center;
     justify-content: center;
     box-shadow: 5px 5px 13px 0px midnightblue;
-    height: 180px;
     line-height: 32px;
+    position: relative;
+}
+.plusCard{
+    height: 218px;
 }
 .parentDiv {
     visibility: hidden;
@@ -31,6 +34,7 @@ body{
     justify-content: center;
     position: fixed;
     left: 515px;
+    box-shadow: 1px 1px 50px 552px aliceblue;
     bottom: 130px;
 }
 .add {
@@ -83,7 +87,70 @@ button.addData {
     color: blue;
     font-weight: bold;
 }
+span{
+    display: block;
+}
+.menu{
+    cursor: pointer;
+}
 .addnote {
     font-size: 33px;
     color: blue;
+}
+.parentActions {
+    display: none;
+    background-color: gray;
+    border: solid 2px blue;
+    position: absolute;
+    right: 14px;
+    bottom: 3px;
+}
+.parentActions > span{
+    padding: 7px 15px;
+}
+.parentActions > span:hover{
+    background-color: white;
+    color: black;
+    cursor: pointer;
+}
+.showmenu{
+    display: block;
+}
+.footer{
+    display: flex;
+}
+.menu {
+    position: relative;
+    margin-left: 140px;
+}
+p.description {
+    height: 150px;
+    width: 258px;
+    word-wrap: break-word;
+    overflow-y: scroll;
+    line-height: 21px;
+    padding-left: 14px;
+    text-align: center;
+}
+p.description::-webkit-scrollbar{
+    -webkit-appearance: none;
+}
+.bottomLine{
+    background-color: gray;
+    height: 2px;
+    width: 232px;
+}
+.topLine{
+    background-color: gray;
+    height: 2px;
+    width: 232px;
+}
+.visible{
+    visibility: visible;
+}
+i{
+    cursor: pointer;
+}
+.blur{
+    filter: brightness(30px);
 }
